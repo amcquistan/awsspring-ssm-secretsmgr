@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: awsspringdemo
+
+  cloud:
+    aws:
+      region:
+        static: us-east-1
+  config:
+    import:
+      - "aws-parameterstore:/config/awsspringdemo/"
+      - "aws-secretsmanager:awsspringdemo"
+
+logging:
+  level:
+    root: info
+    io.awspring.cloud: debug
